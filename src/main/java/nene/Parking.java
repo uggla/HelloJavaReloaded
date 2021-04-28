@@ -1,6 +1,7 @@
 package nene;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Parking {
     private ArrayList<Car> cars;
@@ -13,11 +14,11 @@ public class Parking {
         this.cars.add(car);
     }
 
-    public ArrayList<Car> getCars() {
+    public List<Car> getCars() {
         return cars;
     }
 
-    public void setCars(ArrayList<Car> cars) {
-        this.cars = cars;
+    public void setCars(List<Car> cars) {
+        this.cars =(ArrayList<Car>) cars;
     }
 }
