@@ -6,13 +6,13 @@ class TestCar {
 
     @org.junit.jupiter.api.Test
     void TestgetColor() {
-        Car car = new Car("blue", "fiat");
+        Car car = new Car("blue", "fiat" ,1);
         assertEquals("blue", car.getColor());
     }
 
     @org.junit.jupiter.api.Test
     void TestgetType() {
-        Car car = new Car("blue", "fiat");
-        assertEquals("fiat", car.getType());
+        Car car = new Car("blue", "fiat", 1);
+        assertEquals("fiat", car.getBrand());
     }
 }

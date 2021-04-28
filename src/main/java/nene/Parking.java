@@ -4,21 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parking {
-    private ArrayList<Car> cars;
 
-    public Parking() {
-        this.cars = new ArrayList<>();
+    private int size;
+    private ArrayList<Vehicle> vehicles;
+
+    public Parking(int size) {
+        this.vehicles = new ArrayList<>();
+        this.size = size;
     }
 
-    public void add(Car car){
-        this.cars.add(car);
+    public void add(Vehicle vehicle){
+        this.vehicles.add(vehicle);
     }
 
-    public List<Car> getCars() {
-        return cars;
+    public List<Vehicle> getVehicles() {
+        return vehicles;
     }
 
-    public void setCars(List<Car> cars) {
-        this.cars =(ArrayList<Car>) cars;
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles =(ArrayList<Vehicle>) vehicles;
+    }
+
+    public int freeSpace(){
+        var vehiculesSize = 0;
+        for (Vehicle vehicle : this.vehicles){
+            vehiculesSize += vehicle.getSize();
+        }
+        return this.size - vehiculesSize;
     }
 }
