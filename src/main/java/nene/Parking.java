@@ -26,10 +26,7 @@ public class Parking {
     }
 
     public int freeSpace(){
-        var vehiculesSize = 0;
-        for (Vehicle vehicle : this.vehicles){
-            vehiculesSize += vehicle.getSize();
-        }
+        var vehiculesSize = this.vehicles.stream().mapToInt(Vehicle::getSize).sum();
         return this.size - vehiculesSize;
     }
 }
